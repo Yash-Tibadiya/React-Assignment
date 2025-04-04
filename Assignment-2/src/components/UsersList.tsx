@@ -6,7 +6,7 @@ const UsersList = () => {
   return (
     <div className="w-full h-auto flex flex-row gap-3 justify-center m-4">
       {UsersData.map(({id, name, email, age, location}) => (
-        <div className=" flex flex-col items-start bg-black mt-5 text-white p-8 rounded-2xl">
+        <div key={id} className=" flex flex-col items-start bg-black mt-5 text-white p-8 rounded-2xl">
           <div className="flex flex-row gap-8 my-4">
             <h1 className="text-xl">
               <span className="text-red-500 font-bold">Id: </span>
