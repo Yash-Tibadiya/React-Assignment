@@ -2,6 +2,7 @@ import UsersData from "../Data/UserData.json";
 
 const UsersList = () => {
   console.log(UsersData);
+
   return (
     <div className="w-full h-auto flex flex-row gap-3 justify-center m-4">
       {UsersData.map((data) => (
