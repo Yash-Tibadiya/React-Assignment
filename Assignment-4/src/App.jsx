@@ -1,7 +1,7 @@
 // Props
 
 import List from "./components/List";
-import Todo from "./components/Todo";
+import Todo from "./components/Todo/Todo";
 
 const titles = ["Eat", "Code", "Sleep", "Repeat"];
 
@@ -37,9 +37,7 @@ function App() {
       </div>
 
       <div>
-        {myTodos.map((todo) => (
-        <Todo key={todo.id} id={todo.id} task={todo.task} />
-      ))}
+        <Todo items={myTodos} />
       </div>
     </>
   );
