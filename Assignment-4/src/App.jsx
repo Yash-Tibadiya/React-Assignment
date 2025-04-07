@@ -1,20 +1,46 @@
 // Props
 
 import List from "./components/List";
+import Todo from "./components/Todo";
 
 const titles = ["Eat", "Code", "Sleep", "Repeat"];
+
+const myTodos = [
+  {
+    id: 1,
+    task: "complete react project",
+  },
+  {
+    id: 2,
+    task: "cook food",
+  },
+  {
+    id: 3,
+    task: "Buy Milk",
+  },
+];
 
 function App() {
   return (
     <>
-      {/* <List title="Eat" />
-      <List title="Code" />
-      <List title="Sleep" />
-      <List title="Repeat" /> */}
+      <div>
+        {/* <List title="Eat" />
+        <List title="Code" />
+        <List title="Sleep" />
+        <List title="Repeat" /> */}
+      </div>
 
-      {titles.map((title) => (
-        <List title={title} />
+      <div>
+        {titles.map((title) => (
+          <List title={title} key={title} />
+        ))}
+      </div>
+
+      <div>
+        {myTodos.map((todo) => (
+        <Todo key={todo.id} id={todo.id} task={todo.task} />
       ))}
+      </div>
     </>
   );
 }
