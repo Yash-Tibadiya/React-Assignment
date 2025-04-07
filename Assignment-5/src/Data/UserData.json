@@ -4,34 +4,39 @@
     "name": "Alice Johnson",
     "email": "alice.johnson@example.com",
     "age": 30,
-    "location": "New York"
+    "location": "New York",
+    "isVerified": true
   },
   {
     "id": 2,
     "name": "Bob Smith",
     "email": "bob.smith@example.com",
     "age": 25,
-    "location": "Los Angeles"
+    "location": "Los Angeles",
+    "isVerified": false
   },
   {
     "id": 3,
     "name": "Charlie Brown",
     "email": "charlie.brown@example.com",
     "age": 35,
-    "location": "Chicago"
+    "location": "Chicago",
+    "isVerified": false
   },
   {
     "id": 4,
     "name": "Diana Green",
     "email": "diana.green@example.com",
     "age": 28,
-    "location": "Miami"
+    "location": "Miami",
+    "isVerified": true
   },
   {
     "id": 5,
     "name": "Eve White",
     "email": "eve.white@example.com",
     "age": 32,
-    "location": "San Francisco"
+    "location": "San Francisco",
+    "isVerified": true
   }
 ]

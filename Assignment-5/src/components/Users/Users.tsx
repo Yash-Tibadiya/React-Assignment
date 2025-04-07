@@ -6,6 +6,7 @@ interface IUserData {
   email: string;
   age: number;
   location: string;
+  isVerified: boolean;
 }
 
 interface UsersProps {
@@ -23,6 +24,7 @@ const Users = ({ users }: UsersProps) => {
           email={data.email}
           age={data.age}
           location={data.location}
+          isVerified={data.isVerified}
         />
       ))}
     </div>

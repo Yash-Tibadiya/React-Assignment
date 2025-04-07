@@ -4,9 +4,17 @@ interface UserCardProps {
   email: string;
   age: number;
   location: string;
+  isVerified: boolean;
 }
 
-const UserCard = ({ id, name, email, age, location }: UserCardProps) => {
+const UserCard = ({
+  id,
+  name,
+  email,
+  age,
+  location,
+  isVerified,
+}: UserCardProps) => {
   return (
     <div className="w-full h-auto flex flex-row gap-3 justify-center m-4">
       <div
@@ -34,6 +42,10 @@ const UserCard = ({ id, name, email, age, location }: UserCardProps) => {
         <p>
           <span className="text-blue-500 font-bold">Location: </span>
           {location}
+        </p>
+        <p>
+          <span className="text-blue-500 font-bold">isVerified: </span>
+          {isVerified ? "True" : "False"}
         </p>
       </div>
     </div>
