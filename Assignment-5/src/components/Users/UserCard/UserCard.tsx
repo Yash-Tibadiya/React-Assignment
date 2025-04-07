@@ -1,3 +1,5 @@
+import Proptypes from "prop-types";
+
 interface UserCardProps {
   id: number;
   name: string;
@@ -50,6 +52,15 @@ const UserCard = ({
       </div>
     </div>
   );
+};
+
+UserCard.prototype = {
+  id: Proptypes.number,
+  name: Proptypes.string,
+  email: Proptypes.string,
+  age: Proptypes.number,
+  location: Proptypes.string,
+  isVerified: Proptypes.bool,
 };
 
 export default UserCard;
