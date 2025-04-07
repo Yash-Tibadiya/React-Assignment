@@ -1,3 +1,5 @@
+// Map : render lists of data dynamically
+
 import "./App.css";
 
 // import NumberList from "./components/NumberList";
