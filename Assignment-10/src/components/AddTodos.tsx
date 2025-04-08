@@ -23,6 +23,12 @@ const AddTodos = () => {
     setTodos(newTodos);
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleAddtodo();
+    }
+  };
+
   return (
     <div className="flex flex-col bg-gray-700 w-1/2 rounded-lg ">
       <h1 className="flex text-2xl font-bold p-2 m-2 mt-5 justify-center items-center">
@@ -40,6 +46,7 @@ const AddTodos = () => {
           className="p-2 m-4 border-2 rounded-lg w-1/2"
           value={todo}
           onChange={handleTodoInput}
+          onKeyDown={handleKeyPress}
         />
         <button
           className="bg-gray-900 p-2 px-5 rounded-lg"
@@ -48,7 +55,7 @@ const AddTodos = () => {
           Add
         </button>
       </div>
-      <TodoList todos={todos} handleRemoveTodo={handleRemoveTodo}/>
+      <TodoList todos={todos} handleRemoveTodo={handleRemoveTodo} />
     </div>
   );
 };
