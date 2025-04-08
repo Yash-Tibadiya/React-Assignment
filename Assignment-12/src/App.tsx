@@ -1,9 +1,21 @@
-// useEffect 2
+// useEffect and fetch
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [resourceType, setResourceType] = useState<string>("posts");
+  const [items, setItems] = useState([]);
+
+  // useEffect(()=>{
+  //   console.log("Render :", resourceType);
+  // },[resourceType])
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      // .then((json) => console.log(json));
+      .then((json) => setItems(json));
+  }, [resourceType]);
 
   return (
     <>
@@ -33,6 +45,11 @@ function App() {
         <h1 className="text-4xl font-bold mb-6 text-gray-500">
           {resourceType}
         </h1>
+        <div className="flex flex-col items-start">
+          {items.map((item, index) => {
+            return <div key={index}>{JSON.stringify(item)}</div>;
+          })}
+        </div>
       </div>
     </>
   );
