@@ -6,6 +6,18 @@ function App() {
   const [resourceType, setResourceType] = useState<string>("posts");
   const [items, setItems] = useState([]);
 
+  const [date, setDate] = useState<string>("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const updatedDate = new Date();
+      setDate(updatedDate.toLocaleTimeString());
+    }, 1000);
+
+    // Cleanup the interval on unmount
+    return () => clearInterval(interval);
+  }, []);
+
   // useEffect(()=>{
   //   console.log("Render :", resourceType);
   // },[resourceType])
@@ -21,6 +33,7 @@ function App() {
     <>
       <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center pt-44">
         <h1 className="text-4xl font-bold mb-6 text-blue-500">useEffect 2</h1>
+        <h1 className="text-3xl font-bold mb-6 text-blue-500">Date: {date}</h1>
 
         <div className="flex flex-row justify-center items-center">
           <button
