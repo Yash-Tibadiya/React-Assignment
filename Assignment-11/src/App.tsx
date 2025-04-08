@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [count, setCount] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
     console.log("Count : ", count);
@@ -12,6 +13,14 @@ function App() {
       console.log("Clean up!");
     };
   }, [count]);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -35,6 +44,8 @@ function App() {
             Decrement
           </button>
         </div>
+
+        <h1 className="text-4xl font-bold mb-6 text-blue-500">{windowWidth}</h1>
       </div>
     </>
   );
