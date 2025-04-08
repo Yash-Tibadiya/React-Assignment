@@ -52,3 +52,12 @@ function App() {
 }
 
 export default App;
+
+// case 1: Run on every render
+// useEffect(() => {})
+
+// case 2: Run only on first render
+// useEffect(() => {}, [])
+
+// case 3: Run only when certain values change
+// useEffect(() => {}, [value])
