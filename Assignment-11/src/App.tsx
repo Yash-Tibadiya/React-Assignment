@@ -61,3 +61,12 @@ export default App;
 
 // case 3: Run only when certain values change
 // useEffect(() => {}, [value])
+
+//? Optional
+// case 4: Cleanup function
+// useEffect(() => {
+//
+//   return () => {
+//
+//   }
+// }, [value])
