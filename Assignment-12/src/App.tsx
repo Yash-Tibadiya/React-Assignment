@@ -25,8 +25,8 @@ function App() {
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((response) => response.json())
-      // .then((json) => console.log(json));
-      .then((json) => setItems(json));
+      .then((json) => setItems(json))
+      .then((e) => console.log(e));
   }, [resourceType]);
 
   return (
