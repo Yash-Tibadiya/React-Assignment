@@ -3,22 +3,22 @@ import { initialItems } from "../utils/utils";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
-  const [items] = useState(initialItems);
+  const [numbers, setNumbers] = useState(initialItems);
 
   // retun item - 29_999_998 "isSelected"
   // Befor :
-  // const selectedItem = items.find((item) => item.isSelected);
+  // const selectedItem = numbers.find((item) => item.isSelected);
 
   // use useMemo to rerender when "items" changes
   // After :
   const selectedItem = useMemo(
-    () => items.find((item) => item.isSelected),
-    [items]
+    () => numbers.find((item) => item.isSelected),
+    [numbers]
   );
 
   // const selectedItem = useMemo(
-  //   () => items.find((item) => item.id === count),
-  //   [items, count]
+  //   () => numbers.find((item) => item.id === count),
+  //   [numbers, count]
   // );
 
   return (
@@ -31,7 +31,19 @@ const Counter = () => {
       </h2>
       <div className="flex flex-row justify-center items-center">
         <button
-          onClick={() => setCount(count + 1)}
+          onClick={() => {
+            setCount(count + 1);
+            if (count === 10) {
+              setNumbers(
+                new Array(30_000_000).fill(0).map((_, i) => {
+                  return {
+                    id: i,
+                    isSelected: i === 10_000_000,
+                  };
+                })
+              );
+            }
+          }}
           className="m-4 p-2 px-8 rounded-lg border-2 border-gray-400 bg-gray-600 cursor-pointer"
         >
           Increment
