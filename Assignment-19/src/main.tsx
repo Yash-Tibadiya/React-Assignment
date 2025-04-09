@@ -8,13 +8,14 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/Contact";
 import PricingPage from "./pages/PricingPage";
 import ProfilesPage from "./pages/ProfilesPage";
+import ProfilePage from "./pages/ProfilePage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
-    errorElement: <NotFoundPage />
+    errorElement: <NotFoundPage />,
   },
   {
     path: "/about",
@@ -23,6 +24,12 @@ const router = createBrowserRouter([
   {
     path: "/profiles",
     element: <ProfilesPage />,
+    children: [
+      {
+        path: "/profiles/:profileId",
+        element: <ProfilePage />,
+      },
+    ],
   },
   {
     path: "/pricing",
@@ -32,6 +39,10 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <ContactPage />,
   },
+  // {
+  //   path: "/profiles/:profileId",
+  //   element: <ProfilePage />,
+  // },
 ]);
 
 createRoot(document.getElementById("root")!).render(
