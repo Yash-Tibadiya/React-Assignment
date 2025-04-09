@@ -1,3 +1,5 @@
+// useEffect and axios
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -26,7 +28,9 @@ function App() {
 
         <div className="m-2 p-2">
           {data.map((item, index) => (
-            <li key={index} className="m-1">Name : {item.name}</li>
+            <li key={index} className="m-1">
+              Name : {item.name}
+            </li>
           ))}
         </div>
 
