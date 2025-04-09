@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { initialItems } from "../utils/utils";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
   const [items] = useState(initialItems);
 
-  const selectedItem = items.find((item) => item.isSelected);
+  // retun item - 29_999_998 "isSelected"
+  // Befor :
+  // const selectedItem = items.find((item) => item.isSelected);
+
+  // use useMemo to rerender when "items" changes
+  // After :
+  const selectedItem = useMemo(
+    () => items.find((item) => item.isSelected),
+    [items]
+  );
+
+  // const selectedItem = useMemo(
+  //   () => items.find((item) => item.id === count),
+  //   [items, count]
+  // );
 
   return (
     <div>
