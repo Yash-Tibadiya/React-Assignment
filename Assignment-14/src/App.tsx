@@ -5,11 +5,15 @@ import { useEffect, useRef, useState } from "react";
 function App() {
   const [name, setName] = useState<string>("");
   const renderCount = useRef<number>(0);
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     renderCount.current = renderCount.current + 1;
   });
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   function focus() {
     if (inputRef.current) {
@@ -40,12 +44,9 @@ function App() {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-          <button
-            className="bg-gray-900 p-2 px-5 rounded-lg"
-            onClick={focus}
-          >
-            Add
-          </button>
+            <button className="bg-gray-900 p-2 px-5 rounded-lg" onClick={focus}>
+              Add
+            </button>
           </div>
         </div>
         <h2 className="flex text-lg font-bold p-2 m-2 mt-5 justify-center items-center">
