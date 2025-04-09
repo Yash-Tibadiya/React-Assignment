@@ -1,6 +1,7 @@
-// useMemo
+// useMemo - it is used to memoize the result of a function so that it only recomputes when dependencies change
 
-import Counter from "./components/counter";
+import Counter from "./components/Counter";
+
 
 function App() {
   return (
