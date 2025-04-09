@@ -27,11 +27,11 @@ function App() {
         <button onClick={() => setUsers(shuffle(allUsers))}>Shuffle</button>
         <Search onChange={handleSearch} />
       </div>
-      <ul>
+      <ol>
         {users.map((user) => (
           <li key={user}>{user}</li>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 }
