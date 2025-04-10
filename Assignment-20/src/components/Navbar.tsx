@@ -34,6 +34,14 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                to="/users"
+                className="block px-1 hover:text-blue-500 text-white text-md"
+              >
+                Users
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/in/map"
                 className="block px-1 hover:text-blue-500 text-white text-md"
               >

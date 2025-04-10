@@ -1,3 +1,5 @@
+// React Router
+
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -6,8 +8,9 @@ import X from "./pages/Community/X";
 import Youtube from "./pages/Community/Youtube";
 import Github from "./pages/Community/Github";
 import Linkedin from "./pages/Community/Linkedin";
-import NavbarLayout from "./pages/NavbarLayout";
 import Map from "./pages/Map";
+import Users from "./pages/Users";
+import NavbarLayout from "./pages/NavbarLayout";
 // import Navbar from "./components/Navbar";
 // import NotFoundPage from "./pages/NotFoundPage";
 
@@ -19,6 +22,7 @@ function App() {
         <Route element={<NavbarLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
         </Route>
 
         {/* <Route path="/" element={<Home />} />
