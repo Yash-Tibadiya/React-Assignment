@@ -1,60 +1,92 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="/" className="flex items-center space-x-3">
+        <NavLink to="/" className="flex items-center space-x-3">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-8"
             alt="Flowbite Logo"
           />
           <span className="text-2xl font-semibold text-white">Flowbite</span>
-        </Link>
+        </NavLink>
 
         <div className="w-auto">
           <ul className="font-medium flex flex-row p-2 mt-4 space-x-8">
             <li>
-              <Link
+              <NavLink
                 to="/"
-                className="block px-1 hover:text-blue-500 text-white text-md"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-1 text-blue-500 text-md"
+                    : "block px-1 text-white text-md hover:text-blue-500"
+                }
                 aria-current="page"
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/about"
-                className="block px-1 hover:text-blue-500 text-white text-md"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-1 text-blue-500 text-md"
+                    : "block px-1 text-white text-md hover:text-blue-500"
+                }
               >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/users"
-                className="block px-1 hover:text-blue-500 text-white text-md"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-1 text-blue-500 text-md"
+                    : "block px-1 text-white text-md hover:text-blue-500"
+                }
               >
                 Users
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
+                to="/users/list"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-1 text-blue-500 text-md"
+                    : "block px-1 text-white text-md hover:text-blue-500"
+                }
+              >
+                List
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/in/map"
-                className="block px-1 hover:text-blue-500 text-white text-md"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-1 text-blue-500 text-md"
+                    : "block px-1 text-white text-md hover:text-blue-500"
+                }
               >
                 Map
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/in/community"
-                className="block px-1 hover:text-blue-500 text-white text-md"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block px-1 text-blue-500 text-md"
+                    : "block px-1 text-white text-md hover:text-blue-500"
+                }
               >
                 Community
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

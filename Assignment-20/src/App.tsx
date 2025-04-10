@@ -23,8 +23,10 @@ function App() {
         <Route element={<NavbarLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/:userId" element={<UserDetails />} />
+          {/* <Route path="/users" element={<Users />} /> */}
+          <Route path="/users/list?" element={<Users />} />
+          {/* <Route path="/users/:userId" element={<UserDetails />} /> */}
+          <Route path="/users/:userId/:userName?" element={<UserDetails />} />
         </Route>
 
         {/* <Route path="/" element={<Home />} />
