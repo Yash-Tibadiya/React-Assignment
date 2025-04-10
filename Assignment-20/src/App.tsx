@@ -8,7 +8,7 @@ import Github from "./pages/Community/Github";
 import Linkedin from "./pages/Community/Linkedin";
 import NavbarLayout from "./pages/NavbarLayout";
 // import Navbar from "./components/Navbar";
-// import NotFoundPage from "./pages.tsx/NotFoundPage";
+// import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -23,11 +23,13 @@ function App() {
         {/* <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} /> */}
 
-        <Route path="/community" element={<Community />}>
-          <Route index element={<X />} />
-          <Route path="youtube" element={<Youtube />} />
-          <Route path="github" element={<Github />} />
-          <Route path="linkedin" element={<Linkedin />} />
+        <Route path="in">
+          <Route path="/in/community" element={<Community />}>
+            <Route index element={<X />} />
+            <Route path="youtube" element={<Youtube />} />
+            <Route path="github" element={<Github />} />
+            <Route path="linkedin" element={<Linkedin />} />
+          </Route>
         </Route>
 
         {/* <Route path="/*" element={<NotFoundPage />} /> */}

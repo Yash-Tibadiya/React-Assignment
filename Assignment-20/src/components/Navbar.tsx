@@ -34,7 +34,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/community"
+                to="/in/community"
                 className="block px-1 hover:text-blue-500 text-white text-md"
               >
                 Community
