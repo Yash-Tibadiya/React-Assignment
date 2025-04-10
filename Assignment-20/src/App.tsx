@@ -1,7 +1,4 @@
-
-
 function App() {
-
   return (
     <>
       <div className="w-full h-screen bg-gray-800 flex justify-center ">
@@ -11,4 +8,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
