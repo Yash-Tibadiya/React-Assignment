@@ -7,6 +7,7 @@ import Youtube from "./pages/Community/Youtube";
 import Github from "./pages/Community/Github";
 import Linkedin from "./pages/Community/Linkedin";
 import NavbarLayout from "./pages/NavbarLayout";
+import Map from "./pages/Map";
 // import Navbar from "./components/Navbar";
 // import NotFoundPage from "./pages/NotFoundPage";
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} /> */}
 
         <Route path="in">
+          <Route path="/in/map" element={<Map />} />
           <Route path="/in/community" element={<Community />}>
             <Route index element={<X />} />
             <Route path="youtube" element={<Youtube />} />
