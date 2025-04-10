@@ -25,8 +25,10 @@ function App() {
         <Route path="/about" element={<About />} /> */}
 
         <Route path="in">
-          <Route path="/in/map" element={<Map />} />
-          <Route path="/in/community" element={<Community />}>
+          <Route element={<NavbarLayout />}>
+            <Route path="map" element={<Map />} />
+          </Route>
+          <Route path="community" element={<Community />}>
             <Route index element={<X />} />
             <Route path="youtube" element={<Youtube />} />
             <Route path="github" element={<Github />} />
