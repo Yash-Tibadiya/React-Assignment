@@ -1,7 +1,12 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "./pages.tsx/Home";
-import About from "./pages.tsx/About";
+import Home from "./pages/Home";
+import About from "./pages/About";
 import Navbar from "./components/Navbar";
+import Community from "./pages/Community";
+import X from "./pages/Community/X";
+import Youtube from "./pages/Community/Youtube";
+import Github from "./pages/Community/Github";
+import Linkedin from "./pages/Community/Linkedin";
 // import NotFoundPage from "./pages.tsx/NotFoundPage";
 
 function App() {
@@ -11,6 +16,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/community" element={<Community />}>
+          <Route path="x" element={<X />} />
+          <Route path="youtube" element={<Youtube />} />
+          <Route path="github" element={<Github />} />
+          <Route path="linkedin" element={<Linkedin />} />
+        </Route>
+
         {/* <Route path="/*" element={<NotFoundPage />} /> */}
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
