@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" element={<About />} /> */}
 
         <Route path="/community" element={<Community />}>
-          <Route path="x" element={<X />} />
+          <Route index element={<X />} />
           <Route path="youtube" element={<Youtube />} />
           <Route path="github" element={<Github />} />
           <Route path="linkedin" element={<Linkedin />} />
