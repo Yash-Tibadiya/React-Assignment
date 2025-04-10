@@ -1,13 +1,21 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 const Community = () => {
+  const navigate = useNavigate();
+  const handleNavigateToHome = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <div className="w-full h-screen bg-gray-800 flex flex-col items-center ">
         <h1 className="text-4xl pt-32 text-white">Community Page</h1>
-        <Link to="/" className="text-2xl mt-10 bg-blue-500 p-2 flex items-center justify-center font-medium rounded-xl text-white">
+        <button
+          onClick={handleNavigateToHome}
+          className="text-2xl mt-10 bg-blue-500 p-2 flex items-center justify-center font-medium rounded-xl text-white"
+        >
           Home
-        </Link>
+        </button>
 
         <div className="relative pt-6 w-auto">
           <ul className="font-medium flex flex-row p-2 mt-4 space-x-8">
