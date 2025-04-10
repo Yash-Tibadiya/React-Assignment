@@ -11,6 +11,7 @@ import Linkedin from "./pages/Community/Linkedin";
 import Map from "./pages/Map";
 import Users from "./pages/Users";
 import NavbarLayout from "./pages/NavbarLayout";
+import UserDetails from "./pages/UserDetails";
 // import Navbar from "./components/Navbar";
 // import NotFoundPage from "./pages/NotFoundPage";
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/users/:userId" element={<UserDetails />} />
         </Route>
 
         {/* <Route path="/" element={<Home />} />
