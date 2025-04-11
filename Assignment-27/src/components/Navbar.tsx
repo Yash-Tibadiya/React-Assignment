@@ -2,42 +2,42 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-b-2 border-gray-600 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="/" className="flex items-center space-x-3">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Flowbite Logo"
-          />
-          <span className="text-2xl font-semibold text-white">
-            NextGen Tech
-          </span>
-        </Link>
-
-        <div className="w-auto">
-          <ul className="font-medium flex flex-row p-2 mt-4 space-x-8">
-            <li>
-              <NavLink
-                to="/"
-                className="block px-1 hover:text-blue-500 text-white text-md"
-                aria-current="page"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className="block px-1 hover:text-blue-500 text-white text-md"
-              >
-                About
-              </NavLink>
-            </li>
-          </ul>
+    <header className="bg-white border-b-2 border-gray-600 dark:bg-gray-900">
+      <div className="container flex flex-col md:flex-row items-center justify-between py-5 mx-auto max-w-7xl">
+        <div className="flex flex-col md:flex-row items-center">
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src="https://flowbite.com/docs/images/logo.svg"
+              className="h-8"
+              alt="Flowbite Logo"
+            />
+            <span className="text-2xl font-semibold text-white">
+              NextGen Tech
+            </span>
+          </Link>
+          <nav className="flex flex-wrap items-center justify-center ml-0 md:ml-8 md:border-l-2 md:pl-8 border-gray-600 py-1">
+            <NavLink
+              to="/"
+              className="block mr-5 font-medium px-1 hover:text-blue-500 text-white text-md"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/create"
+              className="block mr-5 font-medium px-1 hover:text-blue-500 text-white text-md"
+            >
+              Create
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="block mr-5 font-medium px-1 hover:text-blue-500 text-white text-md"
+            >
+              About
+            </NavLink>
+          </nav>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
