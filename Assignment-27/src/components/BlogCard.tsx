@@ -17,7 +17,7 @@ const BlogCard = ({ imageUrl, title, content, id }: IBlogEntry) => {
             {title}
           </h5>
         </Link>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-hidden line-clamp-2">
           {content}
         </p>
         <Link
