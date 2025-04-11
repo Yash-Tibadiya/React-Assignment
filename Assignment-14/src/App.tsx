@@ -38,7 +38,6 @@ function App() {
             <input
               type="text"
               placeholder="Enter Your Name"
-              name="email"
               className="p-2 m-4 border-2 rounded-lg w-1/2"
               ref={inputRef}
               value={name}

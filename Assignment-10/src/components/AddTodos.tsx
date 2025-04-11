@@ -42,7 +42,6 @@ const AddTodos = () => {
         <input
           type="text"
           placeholder="Enter Todo or Task"
-          name="email"
           className="p-2 m-4 border-2 rounded-lg w-1/2"
           value={todo}
           onChange={handleTodoInput}
