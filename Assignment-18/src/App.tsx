@@ -7,7 +7,7 @@ function App() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [query, setQuery] = useState<string>("");
 
-  const handleAddItem = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleAddItem = (: Reventeact.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const value = inputRef.current?.value?.trim();
