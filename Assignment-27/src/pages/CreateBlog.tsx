@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-interface IBlogEntries {
+interface IBlogEntry {
+  id: string;
   title: string;
   content: string;
   imageUrl: string;
@@ -12,27 +13,43 @@ const CreateBlog = () => {
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
-  // State to handle form submission
-  const [blogEntries, setBlogEntries] = useState<IBlogEntries[]>([]);
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const newEntry = {
+    // 1. Read existing entries from localStorage
+    const storedEntriesRaw = localStorage.getItem("blogEntries");
+    let existingEntries: IBlogEntry[] = [];
+
+    // If there are stored entries, attempt to parse them
+    if (storedEntriesRaw) {
+      try {
+        // Parse the stored entries into a JavaScript object
+        const parsedEntries = JSON.parse(storedEntriesRaw);
+        existingEntries = parsedEntries;
+      } catch (error) {
+        // If parsing fails, log the error and clear invalid data
+        console.error("Error parsing blog entries from localStorage:", error);
+        localStorage.removeItem("blogEntries");
+      }
+    }
+
+    // 2. Create the new entry with a unique ID
+    const newEntry: IBlogEntry = {
+      id: Date.now().toString(),
       title,
       content,
       imageUrl,
     };
 
-    const updatedEntries = [...blogEntries, newEntry];
+    // 3. Add the new entry to the existing list
+    const updatedEntries = [...existingEntries, newEntry];
 
+    // 4. Save the updated list back to localStorage
     localStorage.setItem("blogEntries", JSON.stringify(updatedEntries));
 
     setTitle("");
     setContent("");
     setImageUrl("");
-
-    setBlogEntries(updatedEntries);
   };
 
   return (
@@ -119,7 +136,6 @@ const CreateBlog = () => {
             <button
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-              
             >
               Submit
             </button>
