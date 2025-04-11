@@ -1,8 +1,28 @@
+import { useState, useEffect } from "react"; // Added useState and useEffect
 import { Link } from "react-router-dom";
+import BlogCard from "../components/BlogCard";
+
+interface BlogEntry {
+  title: string;
+  content: string;
+  imageUrl: string;
+}
 
 const Home = () => {
+  const [blogEntries, setBlogEntries] = useState<BlogEntry[]>([]); // State for blog entries
+
+  useEffect(() => {
+    const storedEntries = JSON.parse(localStorage.getItem("blogEntries") || "[]");
+    if (Array.isArray(storedEntries)) {
+       setBlogEntries(storedEntries);
+    } else {
+      console.error("Stored blog entries are not an array:", storedEntries);
+      setBlogEntries([]);
+    }
+  }, []);
+  
   return (
-    <div className="bg-gray-900 h-screen text-white flex flex-col items-center">
+    <div className="bg-gray-900 h-auto text-white flex flex-col items-center">
       <div className="w-full px-2 py-20 bg-gray-900 md:px-0">
         <div className="container items-center max-w-8xl mx-auto xl:px-5">
           <div className="flex flex-wrap items-center sm:-mx-3">
@@ -56,6 +76,29 @@ const Home = () => {
                   alt="Explore countries"
                   className="w-full h-auto"
                 />
+              </div>
+            </div>
+
+            <div className="mt-32 w-full px-4 md:px-0">
+              <h2 className="text-3xl font-bold text-center mb-12">
+                Latest Blogs
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                {" "}
+                {blogEntries.length > 0 ? (
+                  blogEntries.map((entry, index) => (
+                    <BlogCard
+                      key={index}
+                      imageUrl={entry.imageUrl}
+                      title={entry.title}
+                      content={entry.content}
+                    />
+                  ))
+                ) : (
+                  <p className="text-center col-span-full text-gray-400">
+                    No blog posts yet. Create one!
+                  </p>
+                )}
               </div>
             </div>
           </div>
