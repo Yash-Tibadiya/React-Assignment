@@ -39,7 +39,7 @@ const Home = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row sm:space-x-4">
                   <Link
-                    to="/countries"
+                    to="/createblog"
                     className="flex items-center justify-center px-6 py-3 text-lg text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
                   >
                     Create Your
@@ -68,11 +68,7 @@ const Home = () => {
             </div>
             <div className="w-full md:w-1/2">
               <div className="overflow-hidden rounded-md shadow-xl">
-                <img
-                  src="hero.jpg"
-                  alt="Explore countries"
-                  className="w-full h-auto"
-                />
+                <img src="hero.jpg" className="w-full h-auto" />
               </div>
             </div>
 
