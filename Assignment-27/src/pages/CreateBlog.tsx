@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-interface IBlogEntry {
+export interface IBlogEntry {
   id: string;
   title: string;
   content: string;

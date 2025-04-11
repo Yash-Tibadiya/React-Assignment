@@ -1,26 +1,23 @@
 import { useState, useEffect } from "react"; // Added useState and useEffect
 import { Link } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
-
-interface BlogEntry {
-  title: string;
-  content: string;
-  imageUrl: string;
-}
+import { IBlogEntry } from "./CreateBlog";
 
 const Home = () => {
-  const [blogEntries, setBlogEntries] = useState<BlogEntry[]>([]); // State for blog entries
+  const [blogEntries, setBlogEntries] = useState<IBlogEntry[]>([]); // State for blog entries
 
   useEffect(() => {
-    const storedEntries = JSON.parse(localStorage.getItem("blogEntries") || "[]");
+    const storedEntries = JSON.parse(
+      localStorage.getItem("blogEntries") || "[]"
+    );
     if (Array.isArray(storedEntries)) {
-       setBlogEntries(storedEntries);
+      setBlogEntries(storedEntries);
     } else {
       console.error("Stored blog entries are not an array:", storedEntries);
       setBlogEntries([]);
     }
   }, []);
-  
+
   return (
     <div className="bg-gray-900 h-auto text-white flex flex-col items-center">
       <div className="w-full px-2 py-20 bg-gray-900 md:px-0">
@@ -86,9 +83,10 @@ const Home = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {" "}
                 {blogEntries.length > 0 ? (
-                  blogEntries.map((entry, index) => (
+                  blogEntries.map((entry) => (
                     <BlogCard
-                      key={index}
+                      key={entry.id}
+                      id={entry.id}
                       imageUrl={entry.imageUrl}
                       title={entry.title}
                       content={entry.content}
