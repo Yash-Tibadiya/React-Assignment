@@ -23,7 +23,7 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              to="/create"
+              to="/createblog"
               className="block mr-5 font-medium px-1 hover:text-blue-500 text-white text-md"
             >
               Create

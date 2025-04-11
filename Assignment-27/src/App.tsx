@@ -3,6 +3,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFoundPage from "./pages/NotFoundPage";
+import CreateBlog from "./pages/CreateBlog";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/createblog" element={<CreateBlog />} />
           <Route path="/about" element={<About />} />
         </Route>
 
