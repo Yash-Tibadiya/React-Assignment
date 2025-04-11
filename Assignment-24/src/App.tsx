@@ -44,7 +44,7 @@ function App() {
             </button>
             <button
               className="bg-gray-900 p-2 px-8 rounded-lg m-2 mb-8 cursor-pointer"
-              onClick={() => removeItem()}
+              onClick={removeItem}
             >
               Remove
             </button>
